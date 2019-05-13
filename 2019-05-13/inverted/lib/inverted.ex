@@ -21,11 +21,12 @@ defmodule Inverted do
     titles = collect_all_titles [], 1
     dict_words = Enum.map(titles, fn t -> String.split(t, " ") end)
     Enum.reduce(
-      dict_words,
+      Enum.with_index(dict_words),
       %{},
-      fn (words, acc) ->
-
+      fn ({words, idx}, acc) ->
+        Enum.reduce(words, acc, fn (word, acc) ->
+          Map.update(acc, word, [idx], fn (v) -> [idx | v] end)
+        end)
       end)
-    dict
   end
 end
