@@ -18,7 +18,14 @@ defmodule Inverted do
   end
 
   def hello do
-    collect_all_titles [], 1
-    #    load_comic_title 3000
+    titles = collect_all_titles [], 1
+    dict_words = Enum.map(titles, fn t -> String.split(t, " ") end)
+    Enum.reduce(
+      dict_words,
+      %{},
+      fn (words, acc) ->
+
+      end)
+    dict
   end
 end
