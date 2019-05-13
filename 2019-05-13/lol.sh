@@ -41,32 +41,29 @@ cd json
 
 if [[ $download -eq 1 ]]; then
     max=`wget -O- 'https://xkcd.com/info.0.json' | jq -r .num`
-    seq 1 $max | xargs -n 1 -P 10 bash -c 'get_json "$0"'
+    seq 1 $max | grep -vx 404 | xargs -n 1 -P 10 bash -c 'get_json "$0"'
 fi
 
 declare -A idx
 declare -A res
-declare -A ttl
 
-re='"title":\s*"((\\.|[^"])*)"'
-for f in *.json; do
-    n="${f%.json}"
-    if ! [[ $(cat "$f") =~ $re ]]; then
-        continue
-    fi
-    t="${BASH_REMATCH[1]}"
-    ttl[$n]="$t"
-    for w in $(tr A-Z a-z <<<"$t" | sed 's/[^a-z0-9]/ /g; s/  */ /g'); do
+get_title() {
+    grep -Po '"title":\s*"\K(\\.|[^"])*' "$@"
+}
+
+while read n t; do
+    for w in $t; do
         idx[$w]="$n ${idx[$w]-}"
     done
-done
+done < <( get_title *.json | sed 's/\.json:/ /' |
+          tr A-Z a-z | sed 's/[^a-z0-9]/ /g; s/  */ /g' )
 
 for w in "$@"; do
-    for n in ${idx[$w]}; do
+    for n in ${idx[$w]-}; do
         res[$n]=$((${res[$n]-0}+1))
     done
 done
 
 sort -nr < <(for n in "${!res[@]}"; do
-    printf '%s % 6s %s\n' "${res[$n]}" "($n)" "${ttl[$n]}"
+    printf '%s % 6s %s\n' "${res[$n]}" "($n)" "$(get_title $n.json)"
 done)
