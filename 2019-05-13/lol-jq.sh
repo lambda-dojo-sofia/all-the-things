@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+mkdir -p json
+
 get_json() {
     n="$1"
     out="$n.json"
@@ -11,9 +13,11 @@ get_json() {
         mv "$out~" "$out"
     fi
 }
+
 export -f get_json
 
 download=1
+query=()
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -31,42 +35,31 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-if [[ $# -eq 0 ]]; then
-    echo "Need query" >&2
-    exit 1
-fi
-
-mkdir -p json
-cd json
-
 if [[ $download -eq 1 ]]; then
     max=`wget -O- 'https://xkcd.com/info.0.json' | jq -r .num`
+    pushd json
     seq 1 $max | xargs -n 1 -P 10 bash -c 'get_json "$0"'
+    popd
 fi
 
 declare -A idx
 declare -A res
-declare -A ttl
 
-re='"title":\s*"((\\.|[^"])*)"'
-for f in *.json; do
-    n="${f%.json}"
-    if ! [[ $(cat "$f") =~ $re ]]; then
-        continue
-    fi
-    t="${BASH_REMATCH[1]}"
-    ttl[$n]="$t"
-    for w in $(tr A-Z a-z <<<"$t" | sed 's/[^a-z0-9]/ /g; s/  */ /g'); do
+while read n words; do
+    for w in $words; do
         idx[$w]="$n ${idx[$w]-}"
     done
-done
+done < <(
+    jq -r '(.num | tostring) + " " + .title' json/*.json |
+        tr A-Z a-z | sed 's/[^a-z0-9]/ /g; s/  */ /g'
+)
 
-for w in "$@"; do
-    for n in ${idx[$w]}; do
-        res[$n]=$((${res[$n]-0}+1))
+for word in "$@"; do
+    for id in ${idx[$word]}; do
+        res[$id]=$((${res[$id]-0}+1))
     done
 done
 
-sort -nr < <(for n in "${!res[@]}"; do
-    printf '%s % 6s %s\n' "${res[$n]}" "($n)" "${ttl[$n]}"
+sort -nr < <(for id in "${!res[@]}"; do
+    printf '%s % 6s %s\n' "${res[$id]}" "($id)" "$(jq -r .title json/$id.json)"
 done)
