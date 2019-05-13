@@ -51,11 +51,15 @@ get_title() {
     grep -Po '"title":\s*"\K(\\.|[^"])*' "$@"
 }
 
+get_alt() {
+    grep -Po '"alt":\s*"\K(\\.|[^"])*' "$@"
+}
+
 while read n t; do
     for w in $t; do
         idx[$w]="$n ${idx[$w]-}"
     done
-done < <( get_title *.json | sed 's/\.json:/ /' |
+done < <( get_alt *.json | sed 's/\.json:/ /' |
           tr A-Z a-z | sed 's/[^a-z0-9]/ /g; s/  */ /g' )
 
 for w in "$@"; do
@@ -65,5 +69,5 @@ for w in "$@"; do
 done
 
 sort -nr < <(for n in "${!res[@]}"; do
-    printf '%s % 6s %s\n' "${res[$n]}" "($n)" "$(get_title $n.json)"
+    printf '%s % 6s %s\n' "${res[$n]}" "($n)" "$(get_title $n.json) -- $(get_alt $n.json)"
 done) | less -F
