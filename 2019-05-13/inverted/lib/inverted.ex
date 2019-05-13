@@ -5,7 +5,7 @@ defmodule Inverted do
 
   def hello do
     {:ok, response} = SimpleHttp.get Inverted.next_comic
-    json_response = Jason.decode!(~s(response.body))
+    json_response = Jason.decode!(response.body)
     json_response
   end
 end
