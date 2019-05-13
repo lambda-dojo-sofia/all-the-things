@@ -66,4 +66,4 @@ done
 
 sort -nr < <(for n in "${!res[@]}"; do
     printf '%s % 6s %s\n' "${res[$n]}" "($n)" "$(get_title $n.json)"
-done)
+done) | less -F
