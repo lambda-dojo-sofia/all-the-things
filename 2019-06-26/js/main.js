@@ -1,5 +1,4 @@
-gconst fs = require('fs');
-
+const fs = require('fs');
 
 const dictionary = fs
       .readFileSync('dictionary.txt')
@@ -23,18 +22,19 @@ function findNeighbours(acc, dictionary) {
 	.filter((x) => wordDistance(x, lastWord) === 1);
 }
 
-function wordChains(a, b) {
+function wordChains(a, b, dictionary) {
     function wordChainsHelper(acc) {
 	const lastWord = acc[acc.length - 1];
-	if (lastWord === b)
-	    return acc
-	for(const neighbour of findNeighbours(acc, dictionary)) {
+	if (lastWord === b) {
+	    return acc;
+	}
+	for (const neighbour of findNeighbours(acc, dictionary)) {
 	    const newAcc = wordChainsHelper([].concat(acc, neighbour));
 	    if (newAcc) {
-		return [].concat(acc, newAcc);
+		return newAcc;
 	    }
-	    return false;
 	}
+	return false;
     }
 
     return wordChainsHelper([a]);
@@ -45,4 +45,4 @@ exports.findNeighbours = findNeighbours;
 exports.dictionary = dictionary;
 exports.wordChains = wordChains;
 
-console.log (wordChains ("leg", "cog"));
+console.log(wordChains("train", "brain", dictionary));
