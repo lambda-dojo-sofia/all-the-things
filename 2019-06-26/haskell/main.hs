@@ -1,14 +1,22 @@
 module Main where
 
 main :: IO ()
-main = do
-  s <- readFile "/usr/share/dict/words"
+main = do dict <- fmap (\s -> words' (length from) s) $ readFile "../../resources/datafiles/dictionary.txt"
+          print (oneOffs "leg" dict)
 
-words' :: Int -> IO [String]
-words' l = filter (\x -> length x == l) $ fmap words $ readFile "/usr/share/dict/words"
+from = "leg"
+to = "cog"
 
-isWord :: String -> [String] -> Bool
-isWord w ws = elem w ws
+words' :: Int -> String -> [String]
+words' l s = filter (\x -> length x == l) (words s)
+
+isOneOff :: String -> String -> Bool
+isOneOff a b = 1 == (length $ filter (\x -> x == False) (map (\(a,b) -> a == b) $ zip a b))
+
+oneOffs ::  String -> [String] -> [String]
+oneOffs from dict = filter (\fromDict -> isOneOff from fromDict) dict
+
+
 
 -- generate
 
