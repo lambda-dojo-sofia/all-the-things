@@ -1,0 +1,57 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <option name="RIGHT_MARGIN" value="80" />
+    <ClojureCodeStyleSettings>{
+  :cljs.core/cond-&gt; 1
+  :cljs.core/cond-&gt;&gt; 1
+  :cljs.core/defonce 1
+  :cljs.core/defprotocol 1
+  :cljs.core/ns 1
+  :cljs.core.async.macros/go-loop 1
+  :clojure.core/cond-&gt; 1
+  :clojure.core/cond-&gt;&gt; 1
+  :clojure.core/defmulti :only-indent
+  :clojure.core/ns 1
+  :com.rpl.specter/recursive-path :only-indent
+  :cursive.formatting/align-binding-forms true
+  :cursive.formatting/comment-align-column 40
+  :cursive.formatting/one-space-lists true
+  :devcards.core/defcard :only-indent
+  :devcards.core/deftest :only-indent
+  :mount.core/defstate 1
+  :om-css.core/defui 1
+  :re-frame.core/reg-cofx :only-indent
+  :re-frame.core/reg-event-ctx :only-indent
+  :re-frame.core/reg-event-db 1
+  :re-frame.core/reg-event-fx 1
+  :re-frame.core/reg-fx 1
+  :re-frame.core/reg-sub 1
+  :vimsical-ui.components.button/render 1
+  :vimsical-ui.components.button/style 1
+  :vimsical-ui.components.text-editor/render 1
+  :vimsical-ui.components.tooltip/render 1
+  :vimsical-ui.components.tooltip/style 1
+  :vimsical.components.nav/create-vims 1
+  :vimsical.components.nav/ident 1
+  :vimsical.components.nav/query 1
+  :vimsical.components.nav/render 1
+  :vimsical.components.nav/style 1
+  :vimsical.impl.ds.dll/get-head 1
+  :vimsical.impl.ds.dll/set-head 1
+  :vimsical.util.devcards/defcard-om :only-indent
+  :vimsical.util.devcards/defcard-om-ref :only-indent
+  :vimsical.util.om/defdispatch :only-indent
+  :vimsical.util.om/html 1
+  :vimsical.util.spec/defentity :only-indent
+  :vimsical.util.util/condp-&gt; :only-indent
+}</ClojureCodeStyleSettings>
+    <MarkdownNavigatorCodeStyleSettings>
+      <option name="WRAP_ON_TYPING" value="1" />
+      <option name="DISABLE_WRAP_IN_SOFT_WRAP" value="false" />
+      <option name="RIGHT_MARGIN" value="-1" />
+    </MarkdownNavigatorCodeStyleSettings>
+    <XML>
+      <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+    </XML>
+  </code_scheme>
+</component>
