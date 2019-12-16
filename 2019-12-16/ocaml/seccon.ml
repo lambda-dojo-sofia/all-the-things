@@ -28,3 +28,6 @@ let rec count_valid' acc lo hi =
     count_valid' (if valid lo then acc + 1 else acc) (lo+1) hi
 
 let count_valid = count_valid' 0
+
+let () = Format.printf "%d\n"
+    (count_valid (int_of_string Sys.argv.(1)) (int_of_string Sys.argv.(2)))
