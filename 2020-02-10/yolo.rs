@@ -39,7 +39,7 @@ fn find_val(filter : u64, val : String) -> bool {
 fn hash(val : String) -> u64 {
     let mut r = 0;
     for i in 0..N_HASHES {
-        r = bit_idx(i, val.clone());
+        r = bit_idx(i, val.clone())
     };
     r
 }
