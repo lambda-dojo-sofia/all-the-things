@@ -9,10 +9,20 @@
 
 use std::fs;
 
+fn create_bloom_filter <'a> (size:u32) -> &'a mut Vec<bool> {
+    let &mut filter:Vec<bool> = Vec::with_capacity(size as usize);
+
+    for i in 0..size {
+        filter.push(false);
+    }
+    return filter;
+}
+
 fn main() {
     // Statements here are executed when the compiled binary is called
 
-    let contents = fs::read_to_string("../input").unwrap();
+    //let contents = fs::read_to_string("../input").unwrap();
+    let contents = std::io::stdin().lock();
 
     let io = contents.lines();
     let mut input: Vec<&str> = vec![];
