@@ -1,15 +1,16 @@
-use std::io;
+use std::io::stdin;
 use std::io::prelude::*;
-use std::string;
+use std::string::String;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
+const N_HASHES : u64 = 3;
+
 fn main() {
-    let stdin = io::stdin();
     let mut query = false;
     let mut filter = 0;
 
-    for line in stdin.lock().lines() {
+    for line in stdin().lock().lines() {
         let val = line.unwrap();
 
         if val == "" {
@@ -26,23 +27,24 @@ fn main() {
     }
 }
 
-fn add_val(filter : u64, val : string::String) -> u64 {
-    println!("{}", hash(val.clone()));
+fn add_val(filter : u64, val : String) -> u64 {
     filter | hash(val)
 }
 
-fn find_val(filter : u64, val : string::String) -> bool {
+fn find_val(filter : u64, val : String) -> bool {
     let h = hash(val);
     filter & h == h
 }
 
-fn hash(val : string::String) -> u64 {
-    bit_idx(1, val.clone()) |
-    bit_idx(2, val.clone()) |
-    bit_idx(3, val.clone())
+fn hash(val : String) -> u64 {
+    let mut r = 0;
+    for i in 0..N_HASHES {
+        r = bit_idx(i, val.clone());
+    };
+    r
 }
 
-fn bit_idx(salt : i64, val : string::String) -> u64 {
+fn bit_idx(salt : u64, val : String) -> u64 {
     let mut hasher = DefaultHasher::new();
     salt.hash(&mut hasher);
     val.hash(&mut hasher);
