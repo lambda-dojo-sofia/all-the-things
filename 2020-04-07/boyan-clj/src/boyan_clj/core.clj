@@ -31,7 +31,7 @@
     (as-> covid-data $
       (get $ "records")
       (filter #(= day (get % "dateRep")) $)
-      (sort-by #(Integer/parseInt (get % "cases")) < $)
+      (sort-by #(Integer/parseInt (get % "cases")) > $)
       (take 5 $)
       (output! $))
     (time-since! "We started:" start-ts)))
