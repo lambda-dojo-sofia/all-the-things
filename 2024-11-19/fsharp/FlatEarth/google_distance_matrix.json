@@ -1,0 +1,26 @@
+{
+	"destination_addresses": [
+		"Ню Йорк, Съединени щати"
+	],
+	"origin_addresses": [
+		"Вашингтон, окръг Колумбия, Съединени щати"
+	],
+	"rows": [
+		{
+			"elements": [
+				{
+					"distance": {
+						"text": "362 км",
+						"value": 361721
+					},
+					"duration": {
+						"text": "3 часа 51 минути",
+						"value": 13875
+					},
+					"status": "OK"
+				}
+			]
+		}
+	],
+	"status": "OK"
+}

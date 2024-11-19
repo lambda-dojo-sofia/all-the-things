@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FlatEarth", "D:\FlatEarth\FlatEarth\FlatEarth.fsproj", "{35F722BD-9455-4E59-A8B8-85C66F9A0528}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35F722BD-9455-4E59-A8B8-85C66F9A0528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F722BD-9455-4E59-A8B8-85C66F9A0528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F722BD-9455-4E59-A8B8-85C66F9A0528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F722BD-9455-4E59-A8B8-85C66F9A0528}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1BC25CC-DA4C-4537-B953-F7B21A08D13C}
+	EndGlobalSection
+EndGlobal
