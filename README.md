@@ -15,7 +15,7 @@ In addition, you can find the daily chat at [insert]
 
 | Date  | Location | Subject | Participants |
 | ------------- | ------------- | ------------- | ------------- |
-| 2024-11-19 | Hyperscience Office, Sofia | Flat Earth Dojo | 13 |
+| [2024-11-19](https://github.com/lambda-dojo-sofia/all-the-things/tree/master/2024-11-19) | Hyperscience Office, Sofia | Flat Earth Dojo | 13 |
 
 
 ## Org Team
