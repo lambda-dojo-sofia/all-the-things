@@ -33,7 +33,7 @@ In addition, you can find the daily chat at [insert]
 | 2018-09-11 | | | 5 |
 | [2018-03-27](https://github.com/lambda-dojo-sofia/alphabet-cipher) | | Alphabet cipher | 6 |
 | 2017-04-24 | | | 6 |
-| 2017-03-13 | [Minesweeper](https://github.com/lambda-dojo-sofia/minesweeper-count) & [Fallout](https://github.com/lambda-dojo-sofia/fallout-terminal) | | 9 |
+| 2017-03-13 | | [Minesweeper](https://github.com/lambda-dojo-sofia/minesweeper-count) & [Fallout](https://github.com/lambda-dojo-sofia/fallout-terminal) | 9 |
 | 2017-02-01 | | | 7 |
 | 2016-12-12 | | | 10 |
 | 2016-11-14 | | | 8 |
