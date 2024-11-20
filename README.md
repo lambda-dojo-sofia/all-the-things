@@ -26,7 +26,7 @@ In addition, you can find the daily chat at [insert]
 | [2019-05-13](https://github.com/lambda-dojo-sofia/all-the-things/tree/master/2019-05-13) | | | 6 |
 | [2019-03-18](https://github.com/lambda-dojo-sofia/all-the-things/tree/master/2019-03-18) | | | 7 |
 | [2019-02-13](https://github.com/lambda-dojo-sofia/all-the-things/tree/master/2019-02-13) | | | 7 |
-| 2019-01-14 (II) | | [K2](https://github.com/lambda-dojo-sofia/k2) & [OpenStreetMap](https://github.com/lambda-dojo-sofia/open-street-map) | 4 |
+| 2019-01-14 | | [K2](https://github.com/lambda-dojo-sofia/k2) & [OpenStreetMap](https://github.com/lambda-dojo-sofia/open-street-map) | 4 |
 | [2018-12-10](https://github.com/lambda-dojo-sofia/polymers-aoc2018-05) | | AoC 2018 Polymers | 10 |
 | [2018-11-12](https://github.com/lambda-dojo-sofia/reversi) | | Reversi | 8 |
 | 2018-10-09 | | | 7 |
