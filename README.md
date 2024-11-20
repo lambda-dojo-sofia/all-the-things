@@ -1,9 +1,35 @@
 # All the things
 
-A mono-repo for all dojo code products.
+The Dojo is Governed by this single repository, events are announced within the README as pull requests and RSVP - happens by commenting on the respective Pull Request.
 
-## 2019 March 18th - [Maximum length snake sequence](https://www.techiedelight.com/maximum-length-snake-sequence/)
+In addition, you can find the daily chat at [insert]
 
-[Solutions](https://github.com/lambda-dojo-sofia/all-the-things/tree/master/2019-03-18)
 
-## 2019 February 13th
+## Events
+
+### Next Event 
+
+:hourglass:
+
+### Past Events
+
+| Date  | Location | Subject | Participants |
+| ------------- | ------------- | ------------- | ------------- |
+| 2024-11-19 | Hyperscience Office, Sofia | Flat Earth Dojo | 13 |
+
+
+## Org Team
+
+[@apeschar](https://github.com/apeschar)
+[@bbsbb](https://github.com/bbsbb)
+[@preslavmihaylov](https://github.com/preslavmihaylov)
+[@viktorpenelski](https://github.com/viktorpenelski)
+
+## Venue
+
+We don't have a fixed location - want to host a dojo? Get in touch.
+
+## Code of Conduct
+
+Be mostly human.
+
