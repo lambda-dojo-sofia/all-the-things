@@ -1,8 +1,10 @@
-# All the things
+# All the things 
+
+[![Discord](https://img.shields.io/discord/1308737360959377428?label=discord&logo=discord&logoColor=white&style=for-the-badge&color=black)](https://discord.gg/7YzQDdZs)
 
 The Dojo is Governed by this single repository, events are announced within the README as pull requests and RSVP - happens by commenting on the respective Pull Request.
 
-In addition, you can find the daily chat at [insert]
+In addition, you can find the daily chat at [Discord]
 
 ## Events
 
